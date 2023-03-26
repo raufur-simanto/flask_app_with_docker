@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  redis-server:
+    image: 'redis'
+  flask_app:
+    build: .
+    ports:
+      - "5001:5000"
+      
