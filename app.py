@@ -11,7 +11,7 @@ app.logger.addHandler(file_handler)
 app.logger.setLevel(logging.DEBUG)
 
 
-redis_host = 'redis-server'
+redis_host = 'localhost'
 redis_port = 6379
 
 redis_client = redis.Redis(host=redis_host, port=redis_port)
