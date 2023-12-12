@@ -3,9 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh '''// Example checkout step
-checkout([$class: \'GitSCM\', branches: [[name: \'main\']], userRemoteConfigs: [[url: \'https://github.com/raufur-simanto/flask_app_with_docker.git\']]])
-'''
+        sh 'sh \'pip install -r requirements.txt\''
       }
     }
 
