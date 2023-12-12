@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh '''// checkout branch
-sudo checkout scm'''
+        sh '''
+sudo \'git checkout main\''''
       }
     }
 
