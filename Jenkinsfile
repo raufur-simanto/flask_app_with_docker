@@ -4,7 +4,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh '''
-sudo \'git checkout main\''''
+sh \'git checkout main\''''
       }
     }
 
