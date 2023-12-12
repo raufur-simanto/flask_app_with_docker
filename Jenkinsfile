@@ -4,7 +4,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh '''// checkout branch
-checkout scm'''
+sudo checkout scm'''
       }
     }
 
