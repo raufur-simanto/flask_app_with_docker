@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('dev') {
+    stage('Checkout') {
       steps {
-        echo 'Hello'
+        sh 'git branch: \'main\', url: \'https://github.com/raufur-simanto/flask_app_with_docker.git\''
       }
     }
 
