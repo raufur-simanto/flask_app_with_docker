@@ -4,7 +4,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh '''// checkout branch
-sh \'git checkout main\''''
+checkout scm'''
       }
     }
 
