@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'git branch: \'main\', url: \'https://github.com/raufur-simanto/flask_app_with_docker.git\''
+        sh '''// checkout branch
+sh \'git checkout main\''''
       }
     }
 
