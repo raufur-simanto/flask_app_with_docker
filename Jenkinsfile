@@ -8,4 +8,7 @@ pipeline {
     }
 
   }
+  environment {
+    DOCKER_COMPOSE_FILE = 'docker-compose.yml'
+  }
 }
