@@ -9,8 +9,7 @@ pipeline {
 
     stage('Logs') {
       steps {
-        sh '''// list of files
-ls -l'''
+        sh 'ls -l'
       }
     }
 
