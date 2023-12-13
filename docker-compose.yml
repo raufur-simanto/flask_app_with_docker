@@ -14,4 +14,4 @@ services:
   flask_app:
     image: raufurrahman/flask_app_with_docker:v.0.1
     ports:
-      - "5001:5000"
+      - "5005:5000"
