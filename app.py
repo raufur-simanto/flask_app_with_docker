@@ -25,7 +25,7 @@ def home():
     app.logger.info(val)
     redis_client.set('visits', int(val) + 1)
 
-    return f"My total visits: {val}"
+    return f"My Total visits: {val}"
 
 
 if __name__ == '__main__':
