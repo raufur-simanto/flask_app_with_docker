@@ -7,6 +7,13 @@ pipeline {
       }
     }
 
+    stage('Logs') {
+      steps {
+        sh '''// list of files
+ls -l'''
+      }
+    }
+
   }
   environment {
     DOCKER_COMPOSE_FILE = 'docker-compose.yml'
