@@ -13,5 +13,6 @@ services:
     image: 'redis'
   flask_app:
     image: raufurrahman/flask_app_with_docker:v.0.1
+    container_name: flask_app
     ports:
       - "5001:5000"
