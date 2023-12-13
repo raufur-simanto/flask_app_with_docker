@@ -1,9 +1,17 @@
+# version: '3.8'
+# services:
+#   redis-server:
+#     image: 'redis'
+#   flask_app:
+#     build: .
+#     ports:
+#       - "5001:5000"
+      
 version: '3.8'
 services:
   redis-server:
     image: 'redis'
   flask_app:
-    build: .
+    image: raufurrahman/flask_app_with_docker:v.0.1
     ports:
-      - "5001:5000"
-      
+      - "5002:5000"
