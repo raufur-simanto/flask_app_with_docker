@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'sh \'pip install -r requirements.txt\''
+        git(url: 'https://github.com/raufur-simanto/flask_app_with_docker', branch: 'main')
       }
     }
 
