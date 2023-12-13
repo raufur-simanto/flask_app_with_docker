@@ -25,7 +25,7 @@ def home():
     app.logger.info(val)
     redis_client.set('visits', int(val) + 1)
 
-    return f"My Total visits: {val}"
+    return f"visits: {val}"
 
 
 if __name__ == '__main__':
@@ -40,6 +40,9 @@ if __name__ == '__main__':
 #         DOCKER_COMPOSE_VERSION = '1.29.2'
 #         DOCKER_COMPOSE_FILE = 'docker-compose.yml'
 #         DOCKER_COMPOSE_PROJECT_NAME = 'Check-Visits'
+#     }
+# triggers{
+#         pollSCM('* * * * *') // Polls SCM every 5 minutes (adjust as needed)
 #     }
 
 #     stages {
