@@ -25,65 +25,9 @@ def home():
     app.logger.info(val)
     redis_client.set('visits', int(val) + 1)
 
-    return f"Total Number of Visits: {val}"
+    return f"Total Visits: {val}"
 
 
 if __name__ == '__main__':
     app.run()
 
-# pipeline {
-#     agent {
-#         label 'experiment'
-#     }
-    
-#     environment {
-#         DOCKER_COMPOSE_VERSION = '1.29.2'
-#         DOCKER_COMPOSE_FILE = 'docker-compose.yml'
-#         DOCKER_COMPOSE_PROJECT_NAME = 'Check-Visits'
-#     }
-# triggers{
-#         pollSCM('* * * * *') // Polls SCM every 5 minutes (adjust as needed)
-#     }
-
-#     stages {
-#         stage('Connection'){
-#             steps{
-#                 script {
-#                     echo "Connected successfully!!"
-#                 }
-#             }
-#         }
-        
-#         stage('Checkout') {
-#             steps {
-#                 script {
-#                     // Checkout the code from GitHub
-#                     git branch: 'main', url: 'https://github.com/raufur-simanto/flask_app_with_docker.git'
-#                 }
-#             }
-#         }
-
-#         stage('Build and Deploy with Docker Compose') {
-#             steps {
-#                 script {
-
-#                     // Set Docker Compose project name
-#                     sh "export COMPOSE_PROJECT_NAME=${DOCKER_COMPOSE_PROJECT_NAME}"
-
-#                     // Build and deploy using Docker Compose
-#                     sh "docker-compose -f ${DOCKER_COMPOSE_FILE} up --build"
-#                 }
-#             }
-#         }
-#     }
-
-#     post {
-#         always {
-#             // Clean up, if needed
-#             script {
-#                 // Stop and remove containers
-#                 sh "docker-compose -f ${DOCKER_COMPOSE_FILE} down"
-#             }
-#         }
-#     }
-# }
