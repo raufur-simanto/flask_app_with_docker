@@ -1,6 +1,7 @@
 from flask import Flask
 import redis
 import logging
+import os
 
 app = Flask(__name__)
 
@@ -11,7 +12,7 @@ app.logger.addHandler(file_handler)
 app.logger.setLevel(logging.DEBUG)
 
 
-redis_host = 'redis-server'
+redis_host = os.environ.get('REDIS_HOST', 'redis-server')
 redis_port = 6379
 
 redis_client = redis.Redis(host=redis_host, port=redis_port)

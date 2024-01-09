@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: flask-app
+  template:
+    metadata:
+      labels:
+        component: flask-app
+    spec:
+      containers:
+        - name: flask-app
+          image: raufurrahman/flask_app_with_docker:v.0.2
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
+
+          env:
+            - name: REDIS_HOST
+              value: 'redis'
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+   name: site-visit-service
+spec:
+   type: NodePort
+   selector:
+       component: flask-app
+   ports:
+       - port: 5000
+         targetPort: 5000
