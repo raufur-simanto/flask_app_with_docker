@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: raufurrahman/flask_app_with_docker:v.0.2
+          image: raufurrahman/flask_app_with_docker:tagVersion
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
