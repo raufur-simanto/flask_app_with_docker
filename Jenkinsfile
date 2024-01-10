@@ -120,6 +120,11 @@ pipeline {
             }
             
         }
+
+        stage('Send Email Notification'){
+            mail bcc: '', body: 'Hi!, this mail is from jenkins jobs for successfull deployment', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'raufurrahman777@gmail.com'
+            
+        }
         
     }
   
